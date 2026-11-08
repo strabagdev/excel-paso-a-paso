@@ -1,0 +1,12 @@
+[07/11/2026, 08:12] Encargado: Buenos días, adjunto reporte.
+[07/11/2026, 08:13] Encargado: INFORME DIARIO ANDES NORTE C-2
+Fecha del informe: 06/11/2026
+Turno: B
+Polígono: AN N HW
+20:00 a 23:00 | R-069 | Trabajó | Excavación
+Polígono: AN S HW
+23:00 a 02:00 | P-207 | Mantención | Revisión de bomba
+Fin del informe
+[07/11/2026, 08:15] Coordinador: Recibido, gracias.
+
+Datos ficticios. El término 02:00 ocurre el 07/11/2026. No hay informe A en este ejemplo.
