@@ -1,0 +1,5 @@
+﻿ID,Fecha,Turno,Poligono,Equipo,Inicio,Termino,Accion,Detalle,Programado,Ejecutado
+ACT-01,2026-11-06,A,AN N HW,R-069,08:00,12:00,Trabajó,Excavación,10,10
+ACT-02,2026-11-06,A,AN S HW,J-153,12:00,16:00,Trabajó,Preparación,10,6
+ACT-03,2026-11-06,B,AN N HW,R-069,20:00,23:00,Trabajó,Excavación,8,8
+ACT-04,2026-11-06,B,AN S HW,P-207,23:00,02:00,Mantención,Revisión,4,0

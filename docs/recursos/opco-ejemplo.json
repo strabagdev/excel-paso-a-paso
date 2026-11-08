@@ -1,0 +1,20 @@
+{
+  "ejemplo": true,
+  "descripcion": "Respuesta ficticia. No representa un endpoint real de Opco.",
+  "registros": [
+    {
+      "id": "ACT-01",
+      "fecha": "2026-11-06",
+      "turno": "A",
+      "equipo": "R-069",
+      "horas": 4
+    },
+    {
+      "id": "ACT-03",
+      "fecha": "2026-11-06",
+      "turno": "B",
+      "equipo": "R-069",
+      "horas": 3
+    }
+  ]
+}

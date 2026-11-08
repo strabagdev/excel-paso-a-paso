@@ -1,31 +1,47 @@
 # Excel · Paso a paso
 
-Curso web en español con 32 lecciones, ocho módulos y ejemplos ficticios inspirados en oficina técnica. Incluye fundamentos, fórmulas, búsquedas, calidad de datos, tablas dinámicas, Gantt, LET, LAMBDA, Solver, Power Query, Power BI, Office Scripts, VBA y Python.
+Curso interactivo en español: 32 lecciones, ocho módulos, ejercicios descargables, apuntes y progreso guardado en el navegador.
 
-## Ejecutar
+## Publicar en GitHub Pages
 
-Requiere Node 22.13 o posterior. Instalar con `npm ci` y ejecutar `npm run dev`. El proyecto usa React y Vinext. `npm run build` produce la aplicación para Cloudflare Workers mediante la integración de Sites.
+La versión estática lista para publicar está en `docs/`. No requiere servidor ni inicio de sesión de ChatGPT.
 
-## Contenido
+En **Settings → Pages**, selecciona **Deploy from a branch**, rama **main**, carpeta **/docs**, y guarda.
 
-- `lib/course.ts`: lecciones, ejercicios, soluciones y fuentes oficiales.
-- `app/page.tsx`: navegación, comprobaciones, apuntes, marcadores y progreso.
-- `app/globals.css`: diseño adaptable.
-- `public/recursos`: ocho libros XLSX y archivos complementarios.
-- `scripts/create-course-workbooks.mjs`: generador de recursos para el runtime de Artifact Tool. No se necesita para ejecutar la web.
+Dirección prevista al activar Pages: https://strabagdev.github.io/excel-paso-a-paso/
 
-## Progreso
+## Desarrollo y actualización
 
-Se guarda en localStorage con la clave `excel-paso-a-paso-v1`. No hay sincronización entre dispositivos. Exportar/importar permite trasladar progreso, notas y marcadores. Importar reemplaza el estado actual y valida formato e IDs. Una lección se completa cuando el alumno declara haber realizado la práctica y responde correctamente la comprobación. La web no analiza sus archivos de Excel.
+Requiere Node 22.13 o posterior.
 
-## Alcance
+```bash
+npm ci
+npm run dev:pages
+```
 
-Los datos son ficticios. Los archivos contienen bases para ejercicios; las consultas, tablas dinámicas, macros y gráficos se construyen siguiendo las lecciones. No hay conexión activa con Opco, Microsoft 365, WhatsApp ni Power BI. El JSON es una simulación explícita. La base es Microsoft 365 en español; cada tema avanzado incluye sus requisitos.
+Después de editar las lecciones o la interfaz:
 
-## Publicación
+```bash
+npm run build:pages
+git add app lib pages public docs package.json vite.pages.config.ts scripts/build-pages.mjs
+git commit -m "Actualizar curso"
+git push origin main
+```
 
-Curso publicado: https://excel-paso-a-paso-daniel.dxsilva.chatgpt.site
+GitHub Pages publica el contenido de `docs/`. Hay que reconstruirlo antes de subir cambios de código.
 
-Repositorio: https://github.com/strabagdev/excel-paso-a-paso
+## Archivos
 
-El sitio publicado y este repositorio son copias independientes. Subir cambios a GitHub no despliega automáticamente el sitio.
+- `lib/course.ts`: contenido, ejercicios y soluciones.
+- `app/page.tsx` y `app/globals.css`: interfaz compartida.
+- `pages/`: entrada independiente para GitHub Pages.
+- `public/recursos/`: ocho libros Excel, CSV, JSON y scripts de práctica.
+- `docs/`: distribución estática compilada con Vite.
+
+La configuración original de Sites se conserva; `npm run build` utiliza esa configuración. `npm run build:pages` genera la versión independiente.
+
+## Progreso y prácticas
+
+El progreso, apuntes y marcadores se guardan en localStorage y se pueden exportar e importar desde Mi progreso. El progreso del sitio anterior no migra automáticamente: exporta allí e importa aquí.
+
+Los datos son ficticios. La web no revisa automáticamente los libros del alumno ni se conecta a sistemas reales de Opco o Microsoft 365. Las lecciones de integración explican esas conexiones y sus requisitos.

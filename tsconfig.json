@@ -41,6 +41,7 @@
     "**/*.mts"
   ],
   "exclude": [
+    "docs",
     "public/recursos",
     "node_modules",
     "examples",
